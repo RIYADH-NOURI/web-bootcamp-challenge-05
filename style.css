@@ -243,6 +243,7 @@ span{
         width: 100vw;
         height: 100vh;
         background:url(images/bg-mobile.png) no-repeat ;
+        background-size:cover;
     }
     .right-card .count{
         position: absolute;
