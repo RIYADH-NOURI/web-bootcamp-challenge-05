@@ -1,0 +1,281 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+:root{
+    --pale-blue:hsl(243, 100%, 93%);
+    --grayish-blue:hsl(229, 7%, 55%);
+    --dark-blue:hsl(228, 56%, 26%);
+    --very-dark-blue:hsl(229, 57%, 11%);
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background: var(--very-dark-blue);
+    
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: url(images/bg-desktop.png) no-repeat;
+    background-position: bottom;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container form{
+    width: 800px;
+    display: flex;
+    gap: 20px;
+}
+
+.left-card{
+    width: 40%;
+    background: green;
+    padding:30px;
+    border-radius: 10px 90px 10px 10px;
+    background: var(--dark-blue);
+}
+.svg-icon{
+    display: flex;
+    gap: 10px;
+}
+.svg-logo{
+    margin-bottom: 15px;
+    margin-left: -13px;
+    scale: 0.9;
+}
+button{
+    border: none;
+    border-radius: 8px;
+    background: var(--very-dark-blue);
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+button:hover{
+    background: #f4f4f4;
+}
+.btn-one{
+    scale: 0.8;
+    padding: 12px 10px 8px 12px;
+}
+.btn-two{
+    scale: 0.8;
+    padding: 12px;
+}
+.btn-three {
+    scale: 0.8;
+    padding: 12px;
+}
+.right-card{
+    position: relative;
+    height: 70%;
+    width: 500px;
+    background: var(--dark-blue);
+    padding: 40px 20px;
+    font-size: 10px;
+    margin-top:35px ;
+    border-radius: 10px;
+}
+.right-card-text h3{
+    color: #f4f4f4;
+    font-weight: 300;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+span{
+    font-weight: 700;
+}
+.riaght-card-storage{
+    position: relative;
+    width: 95%;
+    height: 1rem;
+    border-radius: 20px;
+    background: var(--very-dark-blue);
+    margin-bottom: 10px;
+
+}
+.right-card .count{
+    position: absolute;
+    width: 150px;
+    height: 65px;
+    border-radius: 10px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -40px;
+    right: 50px ;
+    font-size:34px;
+    font-weight: 700;
+    z-index: 10;
+    animation-name: count-animation;
+    animation-duration: 2s;
+    
+    animation-iteration-count: infinite;
+
+}
+.right-card::after{
+    content: '';
+    position: absolute;
+    border-bottom: 20px solid #fff;
+    border-right: 20px solid transparent;
+    border-left: 20px solid transparent;
+    rotate: 270deg;
+    right: 40px;
+    top: 15px;
+    z-index: 7;
+    animation-name:count;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+}
+@keyframes count-animation {
+    0%{
+     transform: translateX(0);
+    }
+    50%{
+     transform: translateY(10px);
+    }
+    100%{
+     transform: translateX(0);
+    }
+     
+ }
+ @keyframes count {
+     0%{
+      transform: translateY(0);
+     }
+     50%{
+      transform: translateX(-10px);
+     }
+     100%{
+      transform: translateY(0);
+     }
+      
+  }
+.count span{
+    font-size: 10px;
+    font-weight: 700;
+    padding-left: 10px;
+    color: var(--grayish-blue);
+}
+.riaght-card-storage::before{
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 80%;
+    top: 2px;
+    border-radius: 50%;
+    background: white;
+    z-index: 5;
+    animation-name: ball-animation;
+    animation-duration: 3s ;
+    animation-delay: 3ms;
+    animation-iteration-count:1;
+    animation-fill-mode: forwards;
+}
+.animations{
+    position: absolute;
+    width:16.5px;
+    height: 100%;
+    border-radius: 20px;
+    animation-name: storage-aimation;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+}
+.storage{
+    display: flex;
+    justify-content: space-between;
+    color: #f4f4f4;
+    font-weight: 700;
+    padding-right: 20px;
+}
+
+@keyframes ball-animation{
+    0%{
+        transform: translate(0);
+        
+    }
+    100%{
+        transform: translateX(300px);
+    }
+  
+}
+
+@keyframes storage-aimation{
+    0%{
+
+        background:linear-gradient(to right,hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    }
+    
+    100%{
+    width: 314.3px;
+    background:linear-gradient(to right,hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+}
+}
+@media screen and (max-width:500px){
+    .container form{
+        width: 375px;
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+    }
+    .left-card{
+        width: 80%;
+        height: 180px;
+        scale: 1.2;
+        margin-left: 30px;
+        padding-top: 50px;
+    }
+    .right-card{
+        position: relative;
+        width: 100%;
+    }
+    .container{
+        width: 100vw;
+        height: 100vh;
+        background:url(images/bg-mobile.png) no-repeat ;
+    }
+    .right-card .count{
+        position: absolute;
+        top:120px;
+        right: 100px;
+    }
+    .right-card::after{
+        position: absolute;
+        top: 175px;
+        right: 90px;
+    }
+    @keyframes ball-animation {
+        0%{
+            transform: translate(0);
+            
+        }
+        100%{
+            transform: translateX(200px);
+        }
+        
+    }
+    @keyframes storage-aimation{
+        0%{
+            translate: 0;
+            background:linear-gradient(to right,hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+        }     
+        
+
+        100%{
+            background:linear-gradient(to right,hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+            width: 215px;
+        }
+    
+   }
+  
+}
